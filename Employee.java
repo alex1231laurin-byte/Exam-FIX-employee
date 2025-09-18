@@ -52,8 +52,8 @@ public class Employee{
      */
     private double calculatePay(){
         double taxes = 0.7;
-        totalSalary = unpaidHours * hourlyWage;
-        netPay = totalSalary * taxes;
+        double totalSalary = unpaidHours * hourlyWage;
+        double netPay = totalSalary * taxes;
         return netPay;
     }
 
