@@ -41,9 +41,11 @@ public class Employee{
         int age = calculateAge(2025);
         if(age>=16){
             System.out.println(fullname + " can drive!");
+            return true;
         }
         else{
             System.out.println(fullname + " must wait " + (16-age) + "years before they can drive.");
+            return false;
         }
     }
 
