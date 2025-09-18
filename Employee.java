@@ -61,8 +61,7 @@ public class Employee{
      * Output the payment record and resets unpaid hours
      */
     public void paySalary(){
-        calculatePay();
-        System.out.println(fullname + " has received a wire transfer of " + netPay + " CAD.");
+        System.out.println(fullname + " has received a wire transfer of " + calculatePay() + " CAD.");
         unpaidHours = 0.0;
     }
 }
