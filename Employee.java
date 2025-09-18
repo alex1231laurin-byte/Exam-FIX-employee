@@ -44,9 +44,10 @@ public class Employee{
             return true;
         }
         else{
-            System.out.println(fullname + " must wait " + (16-age) + "years before they can drive.");
+            System.out.println(fullname + " must wait " + (16-age) + " years before they can drive.");
             return false;
         }
+        //Forgot to add return true; and return false;.
     }
 
     /*
@@ -57,6 +58,7 @@ public class Employee{
         double totalSalary = unpaidHours * hourlyWage;
         double netPay = totalSalary * taxes;
         return netPay;
+        //I forgot that temporary values also needed parameters.
     }
 
     /*
@@ -65,5 +67,6 @@ public class Employee{
     public void paySalary(){
         System.out.println(fullname + " has received a wire transfer of " + calculatePay() + " CAD.");
         unpaidHours = 0.0;
+        //The code somehow doesn't save the vale of netPay, so I had to replace netPay with calculatePay().
     }
 }
