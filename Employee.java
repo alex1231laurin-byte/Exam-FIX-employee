@@ -11,12 +11,20 @@ public class Employee{
     private double hourlyWage;
     private double unpaidHours;
 
-    public Employee(String fullname, int yearOfBirth, double hourlyWage){
-        this.fullname = fullname;
-        this.yearOfBirth = yearOfBirth;
-        this.hourlyWage = hourlyWage;
+    public Employee(String fullname2, int yearOfBirth2, double hourlyWage2){
+        fullname = fullname2;
+        yearOfBirth = yearOfBirth2;
+        hourlyWage = hourlyWage2;
         onLeave = false;
         unpaidHours = 0.0;
+    }
+    
+    public void hoursLeftUnpaid(double hoursUnpaid){
+        unpaidHours = hoursUnpaid;
+    }
+    
+    public double getUnpaidHours(){
+        return unpaidHours;
     }
     
     /**
@@ -31,20 +39,30 @@ public class Employee{
      */
     public boolean canDrive(){
         int age = calculateAge(2025);
-        // to be completed
+        if(age>=16){
+            System.out.println(fullname + " can drive!");
+        }
+        else{
+            System.out.println(fullname + " must wait " + (16-age) + "years before they can drive.");
+        }
     }
 
     /*
      * Returns the net pay for the outstanding unpaid hours
      */
     private double calculatePay(){
-        // to be completed
+        double taxes = 0.7;
+        totalSalary = unpaidHours * hourlyWage;
+        netPay = totalSalary * taxes;
+        return netPay;
     }
 
     /*
      * Output the payment record and resets unpaid hours
      */
     public void paySalary(){
-        // to be completed
+        calculatePay();
+        System.out.println(fullname + " has received a wire transfer of " + netPay + " CAD.");
+        unpaidHours = 0.0;
     }
 }
