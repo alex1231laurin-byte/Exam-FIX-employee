@@ -48,6 +48,7 @@ public class Employee{
             return false;
         }
         //Forgot to add return true; and return false;.
+        //Also, you didn't write anything about boolean in the book chapter 1, 2 and 3.
     }
 
     /*
